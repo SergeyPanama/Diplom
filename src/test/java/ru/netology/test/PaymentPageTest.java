@@ -211,12 +211,12 @@ public class PaymentPageTest {
         paymentPage.checkInvalidFormat();
     }
 
-    @DisplayName("Невалидный месяц: ввод менее 2 цифр")
+    @DisplayName("Невалидный код CVC: ввод нулей")
     @Test
-    void shouldPaymentCardInvalidMonthOneDigit() {
+    void shouldPaymentCardNullCvc() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
-                getFirstCardNumber(), getInvalidMonthCardOneDigit(), getYearCard(2), getOwnerCard(), getCvc());
+                getFirstCardNumber(), getMonthCard(1), getYearCard(2), getOwnerCard(), getNullCvc());
         var paymentPage = startPage.payment();
         paymentPage.getFillCardDetails(card);
         paymentPage.checkInvalidFormat();
