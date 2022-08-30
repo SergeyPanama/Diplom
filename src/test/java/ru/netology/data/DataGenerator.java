@@ -60,6 +60,8 @@ public class DataGenerator {
         return faker.numerify("##");
     }
 
+    public static String getNullCvc() { return "000"; }
+
     public static String getOwnerCard() {
         return faker.name().name();
     }
