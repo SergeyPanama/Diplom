@@ -10,6 +10,8 @@ import ru.netology.data.DbInteractionDbUtils;
 import ru.netology.page.StartPage;
 
 
+import java.sql.SQLException;
+
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.data.DataGenerator.*;
