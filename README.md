@@ -13,17 +13,17 @@
 
     APPROVED карта - 4444 4444 4444 4441
 
-    DECLINED карта - 4444 4444 4444 4442.
+    DECLINED карта - 4444 4444 4444 4442
 
 Приложение должно в собственной СУБД сохранять информацию о том, каким способом был совершён платёж, и успешно ли он был совершён (при этом данные карт сохранять не допускается).
 
 ## Документация 
 
-[План автоматизации тестирования веб-формы сервиса покупки туров интернет-банка](https://github.com/sergeyPapa/DiplomaQALVL/blob/master/reports/Plan.md)
+[План автоматизации тестирования веб-формы сервиса покупки туров интернет-банка](https://github.com/SergeyPanama/Diplom/blob/main/reports/Plan.md)
 
-[Отчёт о проведённом тестировании](https://github.com/sergeyPapa/DiplomaQALVL/blob/master/reports/Report.md)
+[Отчёт о проведённом тестировании](https://github.com/SergeyPanama/Diplom/blob/main/reports/Report.md)
 
-[Комплексный отчёт о проведённой автоматизации тестирования](https://github.com/sergeyPapa/DiplomaQALVL/blob/master/reports/Summary.md)
+[Комплексный отчёт о проведённой автоматизации тестирования](https://github.com/SergeyPanama/Diplom/blob/main/reports/Summary.md)
 
 
 
@@ -32,7 +32,7 @@
 Перед запуском необходимо выполнить следующие предусловия. Если у вас уже есть необходимое ПО, то понадобится только п.1 и запуск Docker.
 
 *Предусловия:*
-1. Клонировать [репозиторий](https://github.com/sergeyPapa/DiplomaQALVL).
+1. Клонировать [репозиторий](https://github.com/SergeyPanama/Diplom.git).
 2. Если не установлен Docker Desktop, необходимо его [скачать](https://docs.docker.com/desktop/) и установить.
 3. Запустить Docker Desktop.
 4. Открыть проект в IntelliJ IDEA
