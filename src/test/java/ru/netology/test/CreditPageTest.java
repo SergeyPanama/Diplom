@@ -38,10 +38,10 @@ public class CreditPageTest {
 
     @DisplayName("Проверяем карту со статусом APPROVED")
     @Test
-    void shouldPaymentWithApprovedCard() {
+    void shouldPaymentWithApprovedCard() throws SQLException {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
-                getFirstCardNumber(), getMonthCard(1), getYearCard(2), getOwnerCard(), getCvc());
+                 getFirstCardNumber(), getMonthCard(1), getYearCard(2), getOwnerCard(), getCvc());
         var creditPage = startPage.paymentOnCredit();
         creditPage.getFillCardDetails(card);
         creditPage.successfulPaymentCreditCard();
@@ -51,10 +51,10 @@ public class CreditPageTest {
 
     @DisplayName("Срок окончания действия карты: текущий месяц текущего года, статус APPROVED")
     @Test
-    void shouldPaymentWithApprovedCardExpires() {
+    void shouldPaymentWithApprovedCardExpires() throws SQLException {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
-                getFirstCardNumber(), getMonthCard(0), getYearCard(0), getOwnerCard(), getCvc());
+                 getFirstCardNumber(), getMonthCard(0), getYearCard(0), getOwnerCard(), getCvc());
         var creditPage = startPage.paymentOnCredit();
         creditPage.getFillCardDetails(card);
         creditPage.successfulPaymentCreditCard();
@@ -64,7 +64,7 @@ public class CreditPageTest {
 
     @DisplayName("Проверяем карту со статусом DECLINED")
     @Test
-    void shouldPaymentWithDeclinedCard() {
+    void shouldPaymentWithDeclinedCard() throws SQLException {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getSecondCardNumber(), getMonthCard(0), getYearCard(1), getOwnerCard(), getCvc());
@@ -77,7 +77,7 @@ public class CreditPageTest {
 
     @DisplayName("Срок окончания действия карты: текущий месяц текущего года, статус DECLINED")
     @Test
-    void shouldPaymentWithDeclinedCardExpires() {
+    void shouldPaymentWithDeclinedCardExpires() throws SQLException {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getSecondCardNumber(), getMonthCard(0), getYearCard(0), getOwnerCard(), getCvc());
@@ -204,7 +204,7 @@ public class CreditPageTest {
 
     @DisplayName("Невалидный код CVC: ввод менее 3 цифр")
     @Test
-    void shouldPaymentCardInvalidCvc() {
+    public void shouldPaymentCardInvalidCvc() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getFirstCardNumber(), getMonthCard(1), getYearCard(2), getOwnerCard(), getInvalidCvc());
@@ -215,7 +215,7 @@ public class CreditPageTest {
 
     @DisplayName("Невалидный месяц: ввод менее 2 цифр")
     @Test
-    void shouldPaymentCardInvalidMonthOneDigit() {
+    public void shouldPaymentCardInvalidMonthOneDigit() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getFirstCardNumber(), getInvalidMonthCardOneDigit(), getYearCard(2), getOwnerCard(), getCvc());
@@ -226,7 +226,7 @@ public class CreditPageTest {
 
     @DisplayName("Невалидный месяц: не входит в валидный интервал 1-12")
     @Test
-    void shouldPaymentCardInvalidMonthInvalidPeriod() {
+    public void shouldPaymentCardInvalidMonthInvalidPeriod() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getFirstCardNumber(), getInvalidMonthCardInvalidPeriod(), getYearCard(2), getOwnerCard(), getCvc());
@@ -237,7 +237,7 @@ public class CreditPageTest {
 
     @DisplayName("Невалидный месяц: 00")
     @Test
-    void shouldPaymentCardInvalidMonth() {
+    public void shouldPaymentCardInvalidMonth() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getFirstCardNumber(), getInvalidMonthCard(), getYearCard(2), getOwnerCard(), getCvc());
@@ -248,7 +248,7 @@ public class CreditPageTest {
 
     @DisplayName("Невалидные данные карты: поле Номер карты - не заполнено")
     @Test
-    void shouldPaymentEmptyFieldNumberCard() {
+    public void shouldPaymentEmptyFieldNumberCard() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 null, getMonthCard(1), getYearCard(2), getOwnerCard(), getCvc());
@@ -259,7 +259,7 @@ public class CreditPageTest {
 
     @DisplayName("Невалидные данные карты: поле месяц - не заполнено")
     @Test
-    void shouldPaymentEmptyFieldMonth() {
+    public void shouldPaymentEmptyFieldMonth() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getFirstCardNumber(), null, getYearCard(2), getOwnerCard(), getCvc());
@@ -270,7 +270,7 @@ public class CreditPageTest {
 
     @DisplayName("Невалидные данные карты: поле год - не заполнено")
     @Test
-    void shouldPaymentEmptyFieldYears() {
+    public void shouldPaymentEmptyFieldYears() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getFirstCardNumber(), getMonthCard(2), null, getOwnerCard(), getCvc());
@@ -281,7 +281,7 @@ public class CreditPageTest {
 
     @DisplayName("Невалидные данные карты: поле владелец - не заполнено")
     @Test
-    void shouldPaymentEmptyFieldOwner() {
+    public void shouldPaymentEmptyFieldOwner() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getFirstCardNumber(), getMonthCard(2), getYearCard(3), null, getCvc());
@@ -292,7 +292,7 @@ public class CreditPageTest {
 
     @DisplayName("Невалидные данные карты: поле CVC - не заполнено")
     @Test
-    void shouldPaymentEmptyFieldCvc() {
+    public void shouldPaymentEmptyFieldCvc() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 getFirstCardNumber(), getMonthCard(2), getYearCard(3), getOwnerCard(), null);
@@ -303,7 +303,7 @@ public class CreditPageTest {
 
     @DisplayName("Отправка пустой формы покупки тура")
     @Test
-    void shouldPaymentEmptyAllField() {
+    public void shouldPaymentEmptyAllField() {
         var startPage = new StartPage();
         CardInfo card = new CardInfo(
                 null, null, null, null, null);
