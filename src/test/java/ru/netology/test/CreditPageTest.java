@@ -31,7 +31,7 @@ public class CreditPageTest {
     }
 
     @AfterAll
-    static void tearDownAll() {
+    static void tearDownAll() throws SQLException {
         SelenideLogger.removeListener("allure");
         DbInteractionDbUtils.deleteTables();
     }
