@@ -27,3 +27,7 @@ jobs:
         run: java -jar artifacts/aqa-shop.jar -P:profile=test &
       - name: Build with Gradle
         run: ./gradlew test --info -Dselenide.headless=true
+      - name: Start BD
+        run: application.properties
+      - name: Start 
+        run: gate-simulator/app.js
